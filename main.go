@@ -10,7 +10,11 @@ import (
 
 func main() {
 	http.HandleFunc("/docker", func(w http.ResponseWriter, req *http.Request) {
-		io.WriteString(w, "Hello Docker:"+time.Now().String())
+		io.WriteString(w, "Hello Docker! "+time.Now().String())
+	})
+
+	http.HandleFunc("hello", func(w http.ResponseWriter, req *http.Request) {
+		io.WriteString(w, "Hello, Welcome! "+time.Now().Format("20060102 15:04:05"))
 	})
 
 	if err := http.ListenAndServe(":8080", nil); err != nil {
