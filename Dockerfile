@@ -1,8 +1,8 @@
 FROM golang:latest
 MAINTAINER Logo_fox Edward <logo_fox@163.com>
 
-WORKDIR $GOPATH/src/logo_fox/docker
-ADD . $GOPATH/src/logo_fox/docker
+WORKDIR /user/local/logo_fox/docker
+ADD . /user/local/logo_fox/docker
 
 RUN go build .
 
